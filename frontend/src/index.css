@@ -1,0 +1,173 @@
+/* ----------------------------------------------------------
+   Stili dell'applicazione - CSS vanilla (scritto a mano)
+   ---------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: -120px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: rgba(245, 73, 39, 0.13);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: -1;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -100px;
+  left: -100px;
+  width: 360px;
+  height: 360px;
+  background: rgba(247, 216, 179, 0.9);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: -1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 {
+  text-align: center;
+  color: #F54927;
+  font-style:oblique;
+}
+
+/* ---------- Form ---------- */
+.form {
+  background: #ffffff;
+  border: 1px solid #F54927;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form h2 {
+  margin: 0 0 4px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  gap: 6px;
+}
+
+.form input,
+.form select {
+  padding: 8px 10px;
+  border: 1px solid bisque;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+input:focus, textarea:focus {
+  background-color: #f1faee;
+  border: 2px solid #F54927;
+  outline: none;
+}
+
+/* Affianco i due campi orario su una riga */
+.orari {
+  display: flex;
+  gap: 14px;
+}
+
+.orari label {
+  flex: 1;
+}
+
+button[type='submit'] {
+  align-self: flex-start;
+  background: bisque;
+  color: #F54927;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background: bisque;
+}
+
+button[type='submit']:disabled {
+  background: bisque;
+  cursor: not-allowed;
+}
+
+/* ---------- Messaggi ---------- */
+.messaggio {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.errore {
+  background: #fde8e8;
+  color: #9b1c1c;
+  border: 1px solid #f8b4b4;
+}
+
+.successo {
+  background: #def7ec;
+  color: #03543f;
+  border: 1px solid #84e1bc;
+}
+
+/* ---------- Tabella prenotazioni ---------- */
+.tabella {
+  width: 100%;
+  border-collapse: collapse;
+  background: whitesmoke;
+  border: 1px solid #F54927;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabella th,
+.tabella td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid #F54927;
+}
+
+.tabella th {
+  background: #ffbb9c;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.tabella tr:last-child td {
+  border-bottom: none;
+}
+
+.tabella tr:hover td {
+  background: #f8fafc;
+}
+
+.vuoto {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
